@@ -5,4 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-kingdom = Sightseeing.create(name: "mall", description: " bla bla blabla bla bla bla ", location: "Riyad", image: "" );
+kingdom = Place.create(name: "mall", description: " bla bla blabla bla bla bla ", location: "Riyad", image: "")

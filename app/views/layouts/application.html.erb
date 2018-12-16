@@ -13,8 +13,8 @@
   <body>
   <nav> 
     <% if user_signed_in? %>
-    <%-# when user login in it will show the nav bar for add new place and schedule an itinerary in Application.erb  -%>
-    <%#= link_to 'Add new Place', new_place_path %>
+    <%#-# when user login in it will show the nav bar for add new place and schedule an itinerary in Application.erb  -%>
+    <%= link_to 'Add new Place', new_place_path %>
     <%#= link_to 'View Itineraries' %>
     <span><%= current_user.email %></span>
     <%= link_to "Sign out", destroy_user_session_path, method: :delete %>

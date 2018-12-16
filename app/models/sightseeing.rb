@@ -1,2 +1,0 @@
-class Sightseeing < ApplicationRecord
-end

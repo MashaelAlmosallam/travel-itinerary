@@ -1,22 +1,22 @@
-class SightseeningsController < ApplicationController
+class PlacesController < ApplicationController
   def index
-    @places = Sightseeing.all
+    @places = Place.all
   end
 
   def show
-    @place = Sightseeing.find_by(id: params[:id])
+    @place = Place.find_by(id: params[:id])
   end
 
   def new
-    @place = Sightseeing.new
+    @place = Place.new
   end
 
   def edit
   end
 
   def create
-    place = Sightseeing.create(place_params)
-    redirect_to sightseenings_path
+    place = Place.create(place_params)
+    redirect_to places_path
   end
 
   # def update

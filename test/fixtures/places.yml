@@ -5,7 +5,7 @@ one:
   description: MyText
   location: MyString
   duration: MyString
-
+ 
 two:
   name: MyString
   description: MyText
