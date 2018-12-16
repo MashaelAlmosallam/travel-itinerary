@@ -1,0 +1,22 @@
+<%= form_for @place do |f| %>
+  <div>
+    <%= f.label :name, "What is the name of the place?" %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :desciption, "Describe the place" %> <br>
+    <%= f.text_area :desciption %>
+  </div>
+  <div>
+    <%= f.label :image, "Add image?" %>
+    <%= f.url_field :image %>
+  </div>
+
+<div>
+    <%= f.label :duration, "Styaing hours ?" %>
+    <%= f.text_area :duration %> 
+</div>
+
+
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,2 @@
+module SightseeningsHelper
+end
