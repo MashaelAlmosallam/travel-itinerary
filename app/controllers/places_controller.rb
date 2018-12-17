@@ -15,7 +15,7 @@ class PlacesController < ApplicationController
   end
 
   def create
-    place = Place.create(place_params)
+    place = current_user.places.create(place_params)
     redirect_to places_path
   end
 
@@ -34,6 +34,6 @@ class PlacesController < ApplicationController
   private
 
   def place_params
-    params.require(:place).permit(:name, :location, :duration, :description, :image)
+    params.require(:place).permit(:name, :location, :duration, :description, :image, :user_id)
   end
 end

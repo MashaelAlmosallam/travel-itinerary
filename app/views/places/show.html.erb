@@ -1,5 +1,10 @@
-<h2><%= @place.name %></h2>
 
-<p>Description: <%= @place.description %></p>
-<p> Staying hours: <%= @place.duration %>
-<p>location: <%= @place.location %></p>
+<h2>List of your Places</h2>
+
+<% @places.each do |p| %>
+<p>name: <%= p.name %></p>
+<p> description: <%= p.description %>
+<p>location: <%= p.location %></p>
+<p>duration: <%= p.duration %></p>
+__________________________________________
+<% end%>
