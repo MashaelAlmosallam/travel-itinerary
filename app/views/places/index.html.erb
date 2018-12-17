@@ -2,9 +2,14 @@
 <h2>List of your Places</h2>
 
 <% @places.each do |p| %>
-<p>name: <%= p.name %></p>
-<p> description: <%= p.description %>
+<li>
+<%= link_to(p.name, place_path(p)) %>
+<p>Description: <%= p.description %></p>
+<p> Staying hours: <%= p.duration %>
+<p> image: <%= p.image %>
 <p>location: <%= p.location %></p>
-<p>duration: <%= p.duration %></p>
-__________________________________________
-<% end%>
+
+
+</li>
+<% end %>
+</ul>
