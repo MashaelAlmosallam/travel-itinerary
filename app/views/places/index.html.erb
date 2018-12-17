@@ -8,7 +8,9 @@
 <p> Staying hours: <%= p.duration %>
 <p> image: <%= p.image %>
 <p>location: <%= p.location %></p>
-
+<%=p.visits.each do |visit|%>
+<%= visit.schedule%>
+<%end %>
 
 </li>
 <% end %>

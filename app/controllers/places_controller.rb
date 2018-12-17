@@ -15,7 +15,7 @@ class PlacesController < ApplicationController
   end
 
   def create
-    place = current_user.places.create(place_params)
+    place = Place.create(place_params)
     redirect_to places_path
   end
 

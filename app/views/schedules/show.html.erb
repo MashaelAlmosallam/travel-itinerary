@@ -1,0 +1,10 @@
+<h1><%= @schedule.city %></h1>
+
+<% @day_visits.each do |key, value| %>
+    <h2>Day <%= key %></h2>
+    <ul>
+    <% value.each do |visit| %>
+        <li><%= visit.place.name %></li>
+    <% end %>
+    </ul>
+<% end %>
