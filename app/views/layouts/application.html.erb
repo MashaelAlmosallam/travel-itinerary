@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TravelItinerary</title>
+    <title>Travel Itinerary</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application' %>
   </head>
 
   
   <body>
   <nav> 
+  <%= link_to 'Home', root_path %>
     <% if user_signed_in? %>
     <%#-# when user login in it will show the nav bar for add new place and schedule an itinerary in Application.erb  -%>
+
+    <%= link_to 'All Places', places_path %>
     <%= link_to 'Add new Place', new_place_path %>
-    <%#= link_to 'View Itineraries' %>
+  
     <span><%= current_user.email %></span>
     <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
     <% else%>
