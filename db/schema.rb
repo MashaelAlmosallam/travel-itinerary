@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2018_12_16_103602) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "places", force: :cascade do |t|
+  create_table "sightseeings", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.string "location"
