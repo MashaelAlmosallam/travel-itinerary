@@ -1,3 +1,3 @@
 class Place < ApplicationRecord
-  belongs_to :place
+  has_many :visits
 end
