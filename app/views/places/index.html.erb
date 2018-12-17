@@ -1,7 +1,6 @@
 
 <h2>List of your Places</h2>
 
-<ul>
 <% @places.each do |p| %>
 <li>
 <%= link_to(p.name, place_path(p)) %>
@@ -10,6 +9,7 @@
 vvv
 <p> image: <%= p.image %>
 <p>location: <%= p.location %></p>
+<br><br>
 
 </li>
 <% end %>

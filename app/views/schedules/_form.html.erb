@@ -1,0 +1,18 @@
+<%= form_for @schedule do |f| %>
+  <div>
+    <%= f.label :city, "City :" %>
+    <%= f.text_field :city  %>
+  </div>
+
+  <div>
+    <%= f.label :start_day, "Arravial date :" %>
+    <%= f.datetime_field :start_day %>
+  </div>
+
+<div>
+    <%= f.label :end_day, "Departure date :" %>
+    <%= f.datetime_field :end_day %>
+  </div>
+
+  <%= f.submit %>
+<% end %>

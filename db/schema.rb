@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2018_12_17_073158) do
     t.string "name"
     t.text "description"
     t.string "location"
-    t.string "duration"
+    t.float "duration"
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 2018_12_17_073158) do
 
   create_table "schedules", force: :cascade do |t|
     t.string "city"
-    t.string "start_day"
-    t.string "end_day"
+    t.datetime "start_day"
+    t.datetime "end_day"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
