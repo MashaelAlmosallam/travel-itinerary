@@ -11,7 +11,11 @@ class Router extends React.Component {
             exact
             path="/"
             render={props => (
-              <Home {...props} currentUser={this.props.currentUser} />
+              <Home
+                {...props}
+                currentUser={this.props.currentUser}
+                schedules={this.props.schedules}
+              />
             )}
           />
           <Route
