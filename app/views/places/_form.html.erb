@@ -1,26 +1,26 @@
 <%= form_for @place do |f| %>
   <div>
-    <%= f.label :name, "What is the name of the place?" %>
+    <%= f.label :name, "What is the name of the place:" %>
     <%= f.text_field :name %>
   </div>
   <div>
-    <%= f.label :description, "Describe the place" %> <br>
+    <%= f.label :description, "Describe the place:" %> <br>
     <%= f.text_area :description %>
   </div>
 
   <div>
-    <%= f.label :location, "location" %>
+    <%= f.label :location, "location:" %>
       <%= form.text_field :location %>
       <br>
 
   </div>
   <div>
-    <%= f.label :image, "Add image?" %>
+    <%= f.label :image, "Add image:" %>
     <%= f.url_field :image %>
   </div>
 
 <div>
-    <%= f.label :duration, "Styaing hours ?" %>
+    <%= f.label :duration, "Styaing hours:" %>
     <%= f.text_area :duration %> 
 </div>
 

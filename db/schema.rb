@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(version: 2018_12_17_073158) do
 
   create_table "visits", force: :cascade do |t|
     t.string "day"
-    t.integer "start_time"
-    t.integer "end_time"
+    t.time "start_time"
+    t.time "end_time"
     t.integer "place_id"
     t.integer "schedule_id"
     t.datetime "created_at", null: false
