@@ -3,24 +3,40 @@ import { Link } from "react-router-dom";
 class Schedule extends React.Component {
   constructor(props) {
     super();
-    this.state = { userSchedule: null };
+    this.state = { schedule: null };
+  }
+  componentDidMount() {
+    fetch(`/schedules/${this.props.match.params.id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ schedule: data });
+      });
   }
   render() {
-    if (this.state.userSchedule === null) {
+    if (this.state.schedule === null) {
       return <h2>Loading...</h2>;
     }
-    const listItems = this.state.userSchedule.map(place => {
+    const { schedule, visits } = this.state.schedule;
+    const visitsHTML = visits.map(function(visit) {
+      console.log(visit);
       return (
-        <li key={place.id}>
-          <a href={place.html_url}>{place.name}</a>
-        </li>
+        <p>
+          Day {visit.day}: {visit.place.name}
+        </p>
       );
     });
     return (
       <div>
-        <ul>
-          <Link to="/schedules/show" />;
-        </ul>
+        <h2>
+          {schedule.city}: {schedule.start_day} -> {schedule.end_day}
+        </h2>
+        {visitsHTML}
       </div>
     );
   }
