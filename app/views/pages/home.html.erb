@@ -3,6 +3,7 @@
 <% if current_user %>
 <%= react_component "Router", { currentUser: current_user, schedules: current_user.schedules } %>
 <% else %>
-<%= react_component "Router" %>
+<%#= react_component "Router" %>
+<h1>Log In</h1>
 
 <% end %>
