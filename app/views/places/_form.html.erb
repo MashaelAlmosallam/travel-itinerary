@@ -4,15 +4,23 @@
     <%= f.text_field :name %>
   </div>
   <div>
-    <%= f.label :description, "Describe the place:" %> <br>
+    <%= f.label :description, "Describe the place:" %> 
     <%= f.text_area :description %>
+    <br>
   </div>
 
   <div>
-    <%= f.label :location, "location:" %>
-      <%= form.text_field :location %>
+    <%= f.label :location, "Address:" %>
+      <%= f.text_field :address %>
       <br>
 
+    <%= f.label :latitude, "latitude." %>
+    <%= f.number_field :latitude, step: 0.0000000001 %>
+    <br>
+    <%= f.label :longitude, "longitude." %>
+    <%= f.number_field :longitude, step: 0.000000000001 %>
+    <br>
+ 
   </div>
   <div>
     <%= f.label :image, "Add image:" %>
