@@ -23,14 +23,30 @@ class Schedule extends React.Component {
       });
   }
   clickHandler(visit) {
-    console.log("click", visit);
+    // console.log("click", visit, this);
+    const comp = this;
     // Make a fetch request to select a new visit
     fetch(`/visits/${visit.id}/new`, { method: "GET" })
       .then(r => r.json())
-      .then(function(data) {
-        // this.setState({ schedule: data.visit.place.name });
+      .then(data => {
+        // console.log(comp.state.schedule, data);
+        // loops through visits to find the original
+        for (var i = 0; i < comp.state.schedule.visits.length; i += 1) {
+          const visit = comp.state.schedule.visits[i];
+          //compares the original to the new visit id
+          if (visit.id === data.id) {
+            break;
+          }
+        }
+        // replaces the old id to the new one
+        const schedule = this.state.schedule;
+        schedule.visits[i] = data;
+        this.setState({ schedule: schedule });
         const html = `
-      <li> ${data.place.name}</li>`;
+      <li> ${data.place.name} </li>`;
+        // const li = document.querySelector("li");
+        // li.innerHTML += html;
+
         html;
 
         console.log(data);
