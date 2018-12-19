@@ -1,24 +1,37 @@
-# README
+# Project-03: Travel Itinerary
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Explanation of the technologies:
 
-Things you may want to cover:
+- Ruby on Rails
+- React
+- AJAX
+- CSS
 
-* Ruby version
+## Approach Taken:
 
-* System dependencies
+- Create a Models
+- Added Relationships
+- Controllers & Views
 
-* Configuration
+## Unsolved Problems
 
-* Database creation
+- JQuery
 
-* Database initialization
+## Link:
 
-* How to run the test suite
+- [E-Commerece Website](https://afternoon-cove-36891.herokuapp.com/)
 
-* Services (job queues, cache servers, search engines, etc.)
+## What's next:
 
-* Deployment instructions
+- Add Models
+  - Shoping Cart
+  - Orders
+- Style
 
-* ...
+## Credits:
+
+- [Jack Jeffress ](https://github.com/ga-wolf)
+- [Moath Althawad](https://github.com/mfalthaw/)
+- [Deanin](https://github.com/deanout)
+- [Stack OverFlow](https://stackoverflow.com/)
+- [Materialize](https://materializecss.com/)

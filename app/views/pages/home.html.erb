@@ -1,4 +1,8 @@
 <h4>home.html.erb</h4>
 <div class="container"></div>
-
+<% if current_user %>
 <%= react_component "Router", { currentUser: current_user, schedules: current_user.schedules } %>
+<% else %>
+<%= react_component "Router" %>
+
+<% end %>
