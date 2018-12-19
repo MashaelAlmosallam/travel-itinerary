@@ -40,7 +40,10 @@ class Home extends React.Component {
     }
     let html = "";
     if (this.props.currentUser) {
-      const id = this.props.schedules[this.props.schedules.length - 1].id;
+      if (this.props.schedules[this.props.schedules.length - 1]) {
+        const id = this.props.schedules[this.props.schedules.length - 1].id;
+      }
+
       html = (
         <div>
           <h1>Your Trips</h1>
