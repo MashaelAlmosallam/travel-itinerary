@@ -54,6 +54,15 @@ class SchedulesController < ApplicationController
     redirect_to schedule
   end
 
+  def new_visit
+    visit = Visit.find params[:id]
+    duration = visit.place.duration
+    new_place = Place.order("RANDOM()").find_by("duration <= #{duration}")
+    visit.place_id = new_place.id
+    visit.save
+    render json: visit.as_json(include: [:place])
+  end
+
   private
 
   def schedule_params

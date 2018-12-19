@@ -7,6 +7,7 @@ class Schedule extends React.Component {
   constructor(props) {
     super();
     this.state = { schedule: null };
+    this.clickHandler = this.clickHandler.bind(this);
   }
   componentDidMount() {
     fetch(`/schedules/${this.props.match.params.id}`, {
@@ -24,6 +25,17 @@ class Schedule extends React.Component {
   clickHandler(visit) {
     console.log("click", visit);
     // Make a fetch request to select a new visit
+    fetch(`/visits/${visit.id}/new`, { method: "GET" })
+      .then(r => r.json())
+      .then(function(data) {
+        // this.setState({ schedule: data.visit.place.name });
+        const html = `
+      <li> ${data.place.name}</li>`;
+        html;
+
+        console.log(data);
+      });
+    // console.log("click", visit);
   }
   render() {
     if (this.state.schedule === null) {
@@ -34,7 +46,11 @@ class Schedule extends React.Component {
     const clickHandler = this.clickHandler;
     const groupedHTML = _.map(grouped, function(visits, day) {
       const visitsHTML = visits.map(function(visit) {
-        return <li onClick={() => clickHandler(visit)}>{visit.place.name}</li>;
+        return (
+          <li onClick={e => clickHandler(visit, e.target)}>
+            {visit.place.name}
+          </li>
+        );
       });
       return (
         <div>
