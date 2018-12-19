@@ -6,6 +6,7 @@ class CreateVisits < ActiveRecord::Migration[5.2]
       t.time :end_time
       t.integer :place_id
       t.integer :schedule_id
+      t.boolean :change, default: false
       t.timestamps
     end
   end

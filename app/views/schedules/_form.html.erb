@@ -1,3 +1,4 @@
+<div class="form">
 <%= form_for @schedule do |f| %>
   <div>
     <%= f.label :city, "City :" %>
@@ -9,10 +10,13 @@
     <%= f.datetime_field :start_day %>
   </div>
 
-<div>
+<div >
     <%= f.label :end_day, "Departure date :" %>
     <%= f.datetime_field :end_day %>
   </div>
 
+ <div class="f_form" >
   <%= f.submit %>
+  </div>
 <% end %>
+</div>

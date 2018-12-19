@@ -23,10 +23,9 @@
  
   </div>
   <div>
-    <%= f.label :image, "Add image:" %>
-    <%= f.url_field :image %>
-  </div>
-
+  <%= f.label "Image" %>
+  <%= f.file_field :image %>
+</div>
 <div>
     <%= f.label :duration, "Styaing hours:" %>
     <%= f.text_area :duration %> 

@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import _ from "lodash";
+import Moment from "react-moment";
+
 class Schedule extends React.Component {
   constructor(props) {
     super();
@@ -18,25 +21,51 @@ class Schedule extends React.Component {
         this.setState({ schedule: data });
       });
   }
+  clickHandler(visit) {
+    console.log("click", visit);
+    // Make a fetch request to select a new visit
+  }
   render() {
     if (this.state.schedule === null) {
       return <h2>Loading...</h2>;
     }
     const { schedule, visits } = this.state.schedule;
-    const visitsHTML = visits.map(function(visit) {
-      console.log(visit);
+    const grouped = _.groupBy(visits, "day");
+    const clickHandler = this.clickHandler;
+    const groupedHTML = _.map(grouped, function(visits, day) {
+      const visitsHTML = visits.map(function(visit) {
+        return <li onClick={() => clickHandler(visit)}>{visit.place.name}</li>;
+      });
       return (
-        <p>
-          Day {visit.day}: {visit.place.name}
-        </p>
+        <div>
+          <h2>Day {day}</h2>
+          <ul>{visitsHTML}</ul>
+        </div>
       );
     });
+    // console.log(grouped);
+    // for (let day in grouped) {
+    //   // console.log(day);
+    // }
+
+    // {
+    // _.groupBy(visits, "day");
+    //_.groupBy(visit.place.name, "day");
+    // // }
+    // const visitsHTML = visits.map(function(visit) {
+    //   // console.log(visit);
+    //   return (
+    //     <p>
+    //       {/* {_.groupBy(visits, "day")} */}
+    //   );
+    // });
     return (
       <div>
         <h2>
-          {schedule.city}: {schedule.start_day} -> {schedule.end_day}
+          {schedule.city}: {/* schedule.start_day.Date("YYYY/MM/DD") */}
+          <Moment format="MM/DD/YYYY">{schedule.end_day}</Moment>
         </h2>
-        {visitsHTML}
+        {groupedHTML}
       </div>
     );
   }

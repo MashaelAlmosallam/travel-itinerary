@@ -1,5 +1,15 @@
-<h4>home.html.erb</h4>
+
 <div class="container"></div>
 
-<%= react_component "Router", { currentUser: current_user, schedules: current_user.schedules } %>
+<div class="home_img">
+<%= image_tag("hills.jpg", :alt => "edge") %>
+ <%= image_tag("lights.jpg", :alt => "edge") %>
+ <%= image_tag("download.jpg", :alt => "edge") %>
+ <%= image_tag("images.jpg", :alt => "edge") %> 
+ <%= image_tag("images1.jpg", :alt => "edge") %> 
 </div>
+
+
+
+
+<%= react_component "Router", { currentUser: current_user, schedules: current_user.schedules } %>
