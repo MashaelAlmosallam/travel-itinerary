@@ -25,7 +25,7 @@ class Place extends React.Component {
       return <h2>Loading...</h2>;
     }
     const places = this.state.places;
-    const list = places.map(post => {
+    const list = places.map(place => {
       return (
         <li>
           <Link to={`/places/${places.id}`}>{place.name}</Link>

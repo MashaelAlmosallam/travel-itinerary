@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2018_12_17_073158) do
     t.time "end_time"
     t.integer "place_id"
     t.integer "schedule_id"
+    t.boolean "change", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

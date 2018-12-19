@@ -26,25 +26,31 @@ class SchedulesController < ApplicationController
     schedule = current_user.schedules.create(schedule_params)
     current_day = schedule.start_day
     count = 1
-    while current_day < schedule.end_day
-      nine_am = current_day.midnight + 9.hours
-      start_time = current_day
-      morning_start_time = nine_am > start_time ? start_time : nine_am
-      evening_end_time = schedule.end_day > (current_day.midnight + 18.hours) ? (current_day.midnight + 18.hours) : schedule.end_day
-      original_hours_left = (evening_end_time - morning_start_time) / 60 / 60
-      hours_left_per_day = original_hours_left
-      while hours_left_per_day > 0
+    while current_day <= schedule.end_day
+      morning_start_time = current_day.midnight + 9.hours
+      evening_end_time = current_day.midnight + 18.hours
+      if current_day == schedule.start_day
+        morning_start_time = schedule.start_day
+      end
+      if current_day == schedule.end_day
+        evening_end_time = schedule.end_day
+      end
+      while morning_start_time < evening_end_time
         p = Place.all.sample
-        hours_left_per_day -= p.duration
-        if hours_left_per_day > 0
-          start_time = morning_start_time
-          morning_start_time += p.duration.hours
-          schedule.visits.create(day: count, place_id: p.id, start_time: start_time, end_time: start_time + p.duration.hours)
+        current_search = 1
+        while morning_start_time + p.duration.hours > evening_end_time && current_search <= 3
+          p = Place.all.sample
+          current_search += 1
         end
+        if current_search <= 3
+          schedule.visits.create day: count, place_id: p.id, start_time: morning_start_time, end_time: morning_start_time + p.duration.hours
+        end
+        morning_start_time += p.duration.hours
       end
       current_day += 1.day
       count += 1
     end
+
     redirect_to schedule
   end
 

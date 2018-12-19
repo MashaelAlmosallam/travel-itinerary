@@ -6,10 +6,9 @@
 <%= link_to(p.name, place_path(p)) %>
 <p>Description: <%= p.description %></p>
 <p> Staying hours: <%= p.duration %>
-<p> image: <%= p.image %>
+<p> image:<img class="size", src="<%= p.image %>"> 
 <p>location: <%= p.location %></p>
 <br><br>
-
 </li>
 <% end %>
 </ul>

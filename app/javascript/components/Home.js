@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Moment from "react-moment";
+
 class Home extends React.Component {
   constructor() {
     super();
@@ -24,7 +26,9 @@ class Home extends React.Component {
       const schedules = this.state.schedules.map(function(schedule) {
         return (
           <p>
-            {schedule.city}: {schedule.start_day} -> {schedule.end_day}
+            {schedule.city}: From date
+            <Moment format="MM/DD/YYYY">{schedule.start_day}</Moment> to
+            <Moment format="MM/DD/YYYY">{schedule.end_day}</Moment>
             <Link to={`/schedules/${schedule.id}`}>
               {/* JSON.stringify(this.props.schedules.id)} */}
               <button>View Itinerary</button>
