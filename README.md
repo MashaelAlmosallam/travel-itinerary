@@ -5,33 +5,37 @@
 - Ruby on Rails
 - React
 - AJAX
+- Geocoder
+- Lodash
+- react-moment
 - CSS
 
 ## Approach Taken:
 
-- Create a Models
-- Added Relationships
-- Controllers & Views
+- Create 4 Models with association
+  - user (devise)
+  - place
+- Then added react to
+  - schedule
+  - visit
 
 ## Unsolved Problems
 
-- JQuery
+- Add a category for the user to which activity to add on their schedule
 
 ## Link:
 
-- [E-Commerece Website](https://afternoon-cove-36891.herokuapp.com/)
+- [Travel Itinerary Website](https://young-dawn-24458.herokuapp.com/#/schedules/3)
 
 ## What's next:
 
 - Add Models
   - Shoping Cart
   - Orders
-- Style
+- Work more on CSS
 
 ## Credits:
 
 - [Jack Jeffress ](https://github.com/ga-wolf)
 - [Moath Althawad](https://github.com/mfalthaw/)
-- [Deanin](https://github.com/deanout)
 - [Stack OverFlow](https://stackoverflow.com/)
-- [Materialize](https://materializecss.com/)
