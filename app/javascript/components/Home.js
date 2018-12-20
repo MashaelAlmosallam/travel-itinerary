@@ -23,7 +23,7 @@ class Home extends React.Component {
   render() {
     let schedulesHTML = <p>Loading...</p>;
     if (this.state.schedules) {
-      const schedules = this.state.schedules.map(function(schedule) {
+      const schedules = this.state.schedules.map(function (schedule) {
         return (
           <p>
             {schedule.city}: From date
@@ -31,7 +31,7 @@ class Home extends React.Component {
             <Moment format="MM/DD/YYYY">{schedule.end_day}</Moment>
             <Link to={`/schedules/${schedule.id}`}>
               {/* JSON.stringify(this.props.schedules.id)} */}
-              <button>View Itinerary</button>
+              <button class="btn1" >View Itinerary</button>
             </Link>
           </p>
         );
@@ -46,13 +46,13 @@ class Home extends React.Component {
 
       html = (
         <div>
-          <h1>Your Trips</h1>
+          <h4 class="trips_title">Your Trips</h4>
           {schedulesHTML}
           <a href="/places/new">
-            <button>Add a New Place</button>
+            <button class="btnr">Add a New Place</button>
           </a>
           <a href="/schedules/new">
-            <button>plan your Trip</button>
+            <button class="btnb">plan your Trip</button>
           </a>
           {/* <Link to={`/schedules/${schedule.user.id}`} /> */}
         </div>
@@ -60,8 +60,9 @@ class Home extends React.Component {
     }
 
     return (
-      <div>
-        <h1>Travel Itinerary Web Page</h1>
+      <div class="about">
+        <h3>Travel Itinerary Web Page</h3>
+        <p> Keep all your travel plans in one place and access your itineraries anytime </p>
         {html}
       </div>
     );

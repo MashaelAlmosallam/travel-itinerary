@@ -1,21 +1,39 @@
 <%= form_for @place do |f| %>
+  <div class="form">
   <div>
-    <%= f.label :name, "What is the name of the place?" %>
+    <%= f.label :name, "What is the name of the place:" %>
     <%= f.text_field :name %>
   </div>
   <div>
-    <%= f.label :description, "Describe the place" %> <br>
+    <%= f.label :description, "Describe the place:" %> 
     <%= f.text_area :description %>
+    <br>
+  </div>
+
+  <div>
+    <%= f.label :location, "Address:" %>
+      <%= f.text_field :address %>
+      <br>
+
+    <%= f.label :latitude, "latitude." %>
+    <%= f.number_field :latitude, step: 0.0000000001 %>
+    <br>
+    <%= f.label :longitude, "longitude." %>
+    <%= f.number_field :longitude, step: 0.000000000001 %>
+    <br>
+ 
   </div>
   <div>
   <%= f.label "Image" %>
   <%= f.file_field :image %>
 </div>
 <div>
-    <%= f.label :duration, "Styaing hours ?" %>
+    <%= f.label :duration, "Styaing hours:" %>
     <%= f.text_area :duration %> 
 </div>
+</div>
 
-
+ <div class="f_form" >
   <%= f.submit %>
+  </div>
 <% end %>

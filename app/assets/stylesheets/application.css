@@ -13,3 +13,321 @@
  *= require_tree .
  *= require_self
  */
+body {
+    margin:0;
+font-family: "Lucida Console", Monaco, monospace;
+}
+
+ .nav_style{
+     font-size: 25px;
+  text-align: left;
+  padding: 14px 16px;
+   background-color: #ff0000;
+  display: flex;
+  justify-content: space-between;
+  border-right:1px solid #bbb
+}
+.nav_home{
+ text-decoration: none;
+  color: white;
+  display: block;
+}
+.nav_home:hover{
+  color: #111;
+}
+.nav_place{
+    text-decoration: none;
+     color: white;
+     display: block;
+}
+.nav_place:hover{
+    color: #111;
+
+}
+
+
+.registration{
+    text-align: right;
+    float: right;
+     color: white;
+     display: block;
+     text-decoration: none;
+}
+
+.registration:hover{
+    color: black;
+}
+ .email{
+    float: right;
+ }
+ .title{
+     color: grey;
+
+ }
+ .content{
+     font-size: 15px;
+     font-family: bold;
+     margin-right: 100px;
+ }
+/* .f_form:hover{
+background-color: #4CAF50;
+} */
+ 
+.form{
+    text-align: center;
+}
+
+.home_img img{
+    text-align: center;
+    height: 300px;
+    width: 230px;
+
+}
+
+.about{
+    text-align: center;
+}
+
+
+.btn1{
+   width: 120px;
+    margin-left: 10px;
+    padding-left: 10px;
+    background-color: lightgrey;
+}
+
+.btnr{
+        background-color: #d27070;
+        margin-top: 25px;
+        margin-right: 10px;
+       height: 60px;
+       border-radius: 10%
+}
+
+.btnb{
+    background-color: #91cbe7;
+     margin-left: 10px;
+      height: 60px;
+      border-radius: 10%
+}
+
+
+
+/* Make the container relative */
+.swap-on-hover {
+  position: relative;   
+    margin:  0 auto;
+    max-width: 400px;
+}
+/* Select the image and make it absolute to the container */
+.swap-on-hover img {
+  position: absolute;
+  top:0;
+  left:0;
+    overflow: hidden;
+    /* Sets the width and height for the images*/
+    width: 400px;
+    height: 400px;
+}
+/* 
+    We set z-index to be higher than the back image, so it's alwyas on the front.
+We give it an opacity leaner to .25s, that way when we hover we will get a nice fading effect. 
+*/
+.swap-on-hover .swap-on-hover__front-image {
+  z-index: 9999;
+  transition: opacity .5s linear;
+  cursor: pointer;
+ 
+}
+/* When we hover the figure element, the block with .swap-on-hover, we want to use > so the front-image is going to have opacity of 0, which means it will be hidden, to the back image will show */
+.swap-on-hover:hover > .swap-on-hover__front-image{
+  opacity: 0;
+}
+.swap-on-hoverx .swap-on-hover__front-imagex {
+  z-index: 9999;
+  transition: opacity .5s linear;
+  cursor: pointer;
+ 
+}
+.swap-on-hover > .swap-on-hover__front-imagex{
+  opacity: 0;
+}
+/* 
+==========
+*/
+.container .header{
+    width: 100%;
+    display: flex;
+} 
+.header img{
+    width: 19%;
+    padding: 2px;
+    height: 200px;
+} 
+.container{
+    max-width: 1350px;
+    width: 100%;
+}
+#container {
+    position:relative;
+    height: 300px;
+    width: 100%;
+    display: flex;
+  }
+  #container img {
+    position:absolute;
+    left:0;
+  }
+  @-webkit-keyframes imgFade {
+    0% {
+      opacity:1;
+    }
+    17% {
+      opacity:1;
+    }
+    25% {
+      opacity:0;
+    }
+    92% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+   }
+   
+   @-moz-keyframes imgFade {
+    0% {
+      opacity:1;
+    }
+    17% {
+      opacity:1;
+    }
+    25% {
+      opacity:0;
+    }
+    92% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+   }
+   
+   /* @-o-keyframes imgFade {
+    0% {
+      opacity:1;
+    }
+    17% {
+      opacity:1;
+    }
+    25% {
+      opacity:0;
+    }
+    92% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+   }
+   
+   @keyframes imgFade {
+    0% {
+      opacity:1;
+    }
+    17% {
+      opacity:1;
+    }
+    25% {
+      opacity:0;
+    }
+    92% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+   } */
+   #container img {
+    -webkit-animation-name: imgFade;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 8s;
+  
+    -moz-animation-name: imgFade;
+    -moz-animation-timing-function: ease-in-out;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-duration: 8s;
+  
+    -o-animation-name: imgFade;
+    -o-animation-timing-function: ease-in-out;
+    -o-animation-iteration-count: infinite;
+    -o-animation-duration: 8s;
+  
+    animation-name: imgFade;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 8s;
+  }
+  #container img:nth-of-type(1) {
+    -webkit-animation-delay: 2s;
+    -moz-animation-delay: 2s;
+    -o-animation-delay: 2s;
+    animation-delay: 2s;
+  }
+  #container img:nth-of-type(2) {
+    -webkit-animation-delay: 8s;
+    -moz-animation-delay: 8s;
+    -o-animation-delay: 8s;
+    animation-delay: 8s;
+  }
+  
+  #container img{
+    width: 90%;
+    height: 100%
+  }
+
+.title_form{
+    text-align: center;
+    color: #91cbe7;
+}
+ 
+
+.button, button, input[type=button], input[type=reset], input[type=submit] {
+        background-color: #91cbe7;
+}
+
+.form_title2{
+    text-align: center;
+}
+
+.trips_title{
+    background-color: lightgrey;
+    padding: 30px;
+    margin: 90px;
+    margin-left: 20%;
+    margin-right: 20%;
+    z-index: -1;
+}
+ /* .place_img img{
+     margin-right: 50px;
+     height: 150px;
+     width: 300px
+ } */
+
+ .about_home{
+     margin-top: 60px;
+ }
+ .f_form{
+     text-align: center;
+ }
+   
+ .button, button, input[type=button], input[type=reset], input[type=submit]{
+   
+     background-color: #d27070;
+ }
+ img.place_img {
+     width: 200px;
+     height: 150px;
+ }

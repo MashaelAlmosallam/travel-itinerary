@@ -4,7 +4,7 @@
     <title>Travel Itinerary</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application' %>
@@ -12,22 +12,22 @@
 
   
   <body>
-  <nav> 
-  <%= link_to 'Home', root_path %>
+  <nav class= "nav_style"> 
+  <%= link_to 'Home', root_path, class: "nav_home" %>
     <% if user_signed_in? %>
     <%#-# when user login in it will show the nav bar for add new place and schedule an itinerary in Application.erb  -%>
 
-    <%= link_to 'All Places', places_path %>
+    <%= link_to 'All Places', places_path, class: "nav_place" %>
     <%#= link_to 'Add new Place', new_place_path %>
 
 
     <%# ADD ALL SCHEDULE TO A SPICIFIC USER %>
     <%#= link_to 'Your Itinerary', schedule_path %>
-    <span><%= current_user.email %></span>
-    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+    <span><%#= current_user.email %></span>
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "registration"%>
     <% else%>
-    <%= link_to "Log in", new_user_session_path %>
-  <%= link_to "Sign Up", new_user_registration_path %>
+    <%= link_to "Log in", new_user_session_path, class: "registration" %>
+  <%= link_to "Sign Up", new_user_registration_path, class: "registration" %>
 
 <% end%>
   </nav>
