@@ -21,8 +21,6 @@ ActiveRecord::Schema.define(version: 2018_12_18_143136) do
     t.string "address"
     t.float "duration"
     t.string "image"
-    t.float "latitude"
-    t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -50,10 +48,11 @@ ActiveRecord::Schema.define(version: 2018_12_18_143136) do
 
   create_table "visits", force: :cascade do |t|
     t.string "day"
-    t.integer "start_time"
-    t.integer "end_time"
+    t.time "start_time"
+    t.time "end_time"
     t.integer "place_id"
     t.integer "schedule_id"
+    t.boolean "change", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
