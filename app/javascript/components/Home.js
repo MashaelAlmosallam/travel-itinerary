@@ -23,7 +23,7 @@ class Home extends React.Component {
   render() {
     let schedulesHTML = <p>Loading...</p>;
     if (this.state.schedules) {
-      const schedules = this.state.schedules.map(function(schedule) {
+      const schedules = this.state.schedules.map(function (schedule) {
         return (
           <p>
             {schedule.city}: From date
@@ -31,7 +31,7 @@ class Home extends React.Component {
             <Moment format="MM/DD/YYYY">{schedule.end_day}</Moment>
             <Link to={`/schedules/${schedule.id}`}>
               {/* JSON.stringify(this.props.schedules.id)} */}
-              <button>View Itinerary</button>
+              <button class="btn1" >View Itinerary</button>
             </Link>
           </p>
         );
@@ -41,17 +41,18 @@ class Home extends React.Component {
     let html = "";
     if (this.props.currentUser) {
       if (this.props.schedules[this.props.schedules.length - 1]) {
-          const id = this.props.schedules[this.props.schedules.length - 1].id;
+        const id = this.props.schedules[this.props.schedules.length - 1].id;
       }
+
       html = (
         <div>
-          <h3>Your Trips</h3>
+          <h4 class="trips_title">Your Trips</h4>
           {schedulesHTML}
           <a href="/places/new">
-            <button>Add a New Place</button>
+            <button class="btnr">Add a New Place</button>
           </a>
           <a href="/schedules/new">
-            <button>plan your Trip</button>
+            <button class="btnb">plan your Trip</button>
           </a>
           {/* <Link to={`/schedules/${schedule.user.id}`} /> */}
         </div>

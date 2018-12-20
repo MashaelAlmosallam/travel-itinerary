@@ -7,6 +7,7 @@ class Schedule extends React.Component {
   constructor(props) {
     super();
     this.state = { schedule: null };
+    this.clickHandler = this.clickHandler.bind(this);
   }
   componentDidMount() {
     fetch(`/schedules/${this.props.match.params.id}`, {
@@ -22,8 +23,35 @@ class Schedule extends React.Component {
       });
   }
   clickHandler(visit) {
-    console.log("click", visit);
+    // console.log("click", visit, this);
+    const comp = this;
     // Make a fetch request to select a new visit
+    fetch(`/visits/${visit.id}/new`, { method: "GET" })
+      .then(r => r.json())
+      .then(data => {
+        // console.log(comp.state.schedule, data);
+        // loops through visits to find the original
+        for (var i = 0; i < comp.state.schedule.visits.length; i += 1) {
+          const visit = comp.state.schedule.visits[i];
+          //compares the original to the new visit id
+          if (visit.id === data.id) {
+            break;
+          }
+        }
+        // replaces the old id to the new one
+        const schedule = this.state.schedule;
+        schedule.visits[i] = data;
+        this.setState({ schedule: schedule });
+        const html = `
+      <li> ${data.place.name} </li>`;
+        // const li = document.querySelector("li");
+        // li.innerHTML += html;
+
+        html;
+
+        console.log(data);
+      });
+    // console.log("click", visit);
   }
   render() {
     if (this.state.schedule === null) {
@@ -34,7 +62,11 @@ class Schedule extends React.Component {
     const clickHandler = this.clickHandler;
     const groupedHTML = _.map(grouped, function(visits, day) {
       const visitsHTML = visits.map(function(visit) {
-        return <li onClick={() => clickHandler(visit)}>{visit.place.name}</li>;
+        return (
+          <li onClick={e => clickHandler(visit, e.target)}>
+            {visit.place.name}
+          </li>
+        );
       });
       return (
         <div>

@@ -1,15 +1,45 @@
 
-<div class="container"></div>
-
-<div class="home_img">
-<%= image_tag("hills.jpg", :alt => "edge") %>
- <%= image_tag("lights.jpg", :alt => "edge") %>
- <%= image_tag("download.jpg", :alt => "edge") %>
- <%= image_tag("images.jpg", :alt => "edge") %> 
- <%= image_tag("images1.jpg", :alt => "edge") %> 
+<div class="container">
+<div class="header">
+<%# image_tag("hills.jpg", :alt => "edge",:class => "bottom") %>
+<%# image_tag("lights.jpg", :alt => "edge",:class => "bottom") %> 
+<%# image_tag("download.jpg", :alt => "edge") %>
+<%# image_tag("images.jpg", :alt => "edge")  %> 
+<%# image_tag("images1.jpg", :alt => "edge")  %> 
+<div id="container">
+    <img src="/images/lights.jpg">
+    <img src="/images/download.jpeg">
+</div>
+<div id="container">
+<img src="/images/images.jpeg">
+<img src="/images/images1.jpeg">
+</div>
+<div id="container">
+<img src="/images/hotel.jpg">
+<img src="/images/hills.jpg">
+</div>
+<div id="container">
+<img src="/images/download.jpeg">
+<img src="/images/lights.jpg">
+</div>
+</div>
 </div>
 
 
 
 
-<%= react_component "Router", { currentUser: current_user, schedules: current_user.schedules } %>
+
+<% if current_user %>
+<%= react_component "Router", { currentUser: current_user, schedules: current_user.schedules } %> <br>
+<% else %>
+<div class="home_img">
+
+<%#= image_tag("hills.jpg", :alt => "edge") %>
+ <%#= image_tag("lights.jpg", :alt => "edge") %>
+ <%#= image_tag("download.jpg", :alt => "edge") %>
+ <%#= image_tag("images.jpg", :alt => "edge") %> 
+ <%#= image_tag("images1.jpg", :alt => "edge") %> 
+</div>
+<%#= react_component "Router" %>
+
+<% end %>
